@@ -316,21 +316,33 @@ h2[id] {
 }
 
 /* Theme toggle button */
-.toggle {
-  background: var(--card);
-  padding: 8px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 16px;
-  box-shadow: var(--shadow);
-  user-select: none;
+/* Hamburger visibility control */
+.nav-toggle{
+  font-size:26px;
+  cursor:pointer;
+  display:none; /* hidden by default */
 }
 
-/* Mobile spacing */
-@media (max-width: 900px) {
-  .toggle {
-    padding: 6px 12px;
-    font-size: 14px;
+/* Mobile only */
+@media (max-width: 900px){
+  .nav-toggle{
+    display:block;
+  }
+}
+/* ===== MOBILE HERO SPACING FIX ===== */
+@media (max-width: 768px) {
+
+  .container{
+    padding-top: 80px; /* was 120px */
+  }
+
+  .hero{
+    padding-top: 60px;  /* was 110px */
+    padding-bottom: 60px;
+  }
+
+  .hero-img{
+    margin-top: 0;
   }
 }
 </style>
@@ -655,6 +667,12 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </footer>
 
 </div>
+<script>
+/* Force page to load from top (hero section) */
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname);
+}
+</script>
 
 <script>
 // Force page to always load at top (Hero section)
@@ -699,6 +717,7 @@ window.addEventListener("load", () => {
     window.scrollTo(0, 0);
   }
 });
+
 </script>
 
 </body>
