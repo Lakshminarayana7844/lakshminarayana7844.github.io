@@ -53,7 +53,25 @@ body::before{
   margin:30px 0 0;
   background:linear-gradient(90deg, transparent, rgba(99,102,241,.35), transparent);
 }
+.toggle{
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+}
+.nav-right{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
+.nav-toggle{
+  order:2;
+}
+
+.toggle{
+  order:1;
+}
 /* ===== GLASS + GLOW CARDS ===== */
 .card{
   backdrop-filter: blur(14px);
@@ -241,7 +259,7 @@ html.dark .navbar{
     right:-100%;
     width:220px;
     height:100vh;
-    background:var(--card);
+    background:rgba(15,23,42,.98);
     flex-direction:column;
     padding:30px;
     transition:.35s ease;
@@ -277,6 +295,11 @@ html.dark .navbar{
     font-size: 30px;
     line-height: 1.2;
   }
+}
+/* Fix section heading hidden under fixed navbar */
+section,
+h2[id] {
+  scroll-margin-top: 100px;
 }
 </style>
 </head>
