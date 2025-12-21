@@ -81,7 +81,11 @@ body{
   background:linear-gradient(180deg,var(--bg2),var(--bg));
   color:var(--text);
 }
-.container{max-width:1200px;margin:auto;padding:70px 20px}
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 20px;
+}
 h1{font-size:46px;margin-bottom:10px}
 h2{
   font-size:30px;
@@ -187,12 +191,94 @@ footer{
   color:var(--muted);
   font-size:14px;
 }
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:64px;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(12px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+html.dark .navbar{
+  background:rgba(2,6,23,.75);
+}
+
+.nav-logo{
+  font-weight:700;
+  font-size:18px;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+}
+.nav-links a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size:14px;
+}
+
+.nav-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .nav-links{
+    position:fixed;
+    top:64px;
+    right:-100%;
+    width:220px;
+    height:100vh;
+    background:var(--card);
+    flex-direction:column;
+    padding:30px;
+    transition:.35s ease;
+    box-shadow:var(--shadow);
+  }
+  .nav-links.show{
+    right:0;
+  }
+  .nav-toggle{
+    display:block;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
+<nav class="navbar">
+  <div class="nav-logo">Lakshmi</div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#profile">Profile</a>
+    <a href="#interests">Interests</a>
+    <a href="#soft-skills">Soft Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#journey">Journey</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</nav>
 
 <div class="container">
 
@@ -215,7 +301,7 @@ footer{
 </div>
 
 <!-- PROFILE -->
-<h2>Profile</h2>
+<h2 id="profile">Profile</h2>
 <div class="section-wrap">
 <div class="card about-card">
 AI and Data Science student with hands-on experience working with real datasets,
@@ -229,7 +315,7 @@ finance analytics, or data science.
 </div>
 
 <!-- EDUCATION -->
-<h2>Education</h2>
+<h2 id="education">Education</h2>
 <div class="grid">
 <div class="card" style="--i:0">
 <h3>B.Tech. Artificial Intelligence and Data Science</h3>
@@ -257,7 +343,7 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </div>
 
 <!-- PROJECTS -->
-<h2>Projects</h2>
+<h2 id="projects">Projects</h2>
 <div class="grid">
 
 <div class="card" style="--i:0">
@@ -363,7 +449,7 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </div>
 
 <!-- Technical Skills -->
-<h2>Technical Skills</h2>
+<h2 id="skills">Technical Skills</h2>
 <div class="grid">
 <div class="card skill" style="--i:0">Python (Pandas, NumPy)</div>
 <div class="card skill" style="--i:1">SQL (MySQL)</div>
@@ -374,7 +460,7 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 <div class="card skill" style="--i:6">Basic Machine Learning</div>
 <div class="card skill" style="--i:7">GitHub & VS Code</div>
 </div>
-
+  
 <h2 id="certifications">Certifications & Courses</h2>
 <div class="grid">
 
@@ -417,8 +503,8 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 
 </div>
 <!-- Journey -->
-<h2>Journey</h2>
-<div class="grid">
+<h2 id="journey">Journey</h2>
+  <div class="grid">
 
   <div class="card" style="--i:0">
     <strong>2022</strong><br>
@@ -447,7 +533,7 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </div>
 
 <!-- Technical Interests -->
-<h2>Technical Interests</h2>
+<h2 id="interests">Technical Interests</h2>
 <div class="grid">
 <div class="card skill" style="--i:0">Data Visualization</div>
 <div class="card skill" style="--i:1">Business & Financial Analytics</div>
@@ -457,7 +543,7 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </div>
 
 <!-- Soft Skills -->
-<h2>Soft Skills</h2>
+<h2 id="soft-skills">Soft Skills</h2>
 <div class="grid">
 <div class="card skill" style="--i:0">Analytical Thinking</div>
 <div class="card skill" style="--i:1">Problem Solving</div>
@@ -467,7 +553,7 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </div>
 
 <!-- Languages -->
-<h2>Languages</h2>
+<h2 id="languages">Languages</h2>
 <div class="grid">
 <div class="card skill" style="--i:0">English – B2</div>
 <div class="card skill" style="--i:1">Telugu – Native</div>
@@ -486,7 +572,9 @@ function toggleTheme(){
   const isDark = root.classList.toggle("dark");
   localStorage.setItem("theme", isDark ? "dark" : "light");
 }
-
+function toggleNav(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
 (function(){
   const savedTheme = localStorage.getItem("theme");
   if(savedTheme === "dark"){
