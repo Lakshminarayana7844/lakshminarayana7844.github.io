@@ -53,15 +53,7 @@ body::before{
   margin:30px 0 0;
   background:linear-gradient(90deg, transparent, rgba(99,102,241,.35), transparent);
 }
-.toggle{
-  display:flex !important;
-  align-items:center;
-  justify-content:center;
-}
-.toggle{
-  color: var(--text);
-  border: 1px solid rgba(255,255,255,0.15);
-}
+
 .nav-right{
   margin-left:auto;
   display:flex;
@@ -73,9 +65,7 @@ body::before{
   order:2;
 }
 
-.toggle{
-  order:1;
-}
+
 /* ===== GLASS + GLOW CARDS ===== */
 .card{
   backdrop-filter: blur(14px);
@@ -117,18 +107,6 @@ h2{
 }
 p{line-height:1.7;color:var(--muted)}
 
-.toggle{
-  position:fixed;
-  top:18px;
-  right:18px;
-  background:var(--card);
-  padding:10px 16px;
-  border-radius:30px;
-  cursor:pointer;
-  box-shadow:var(--shadow);
-  font-weight:600;
-  z-index:1000;
-}
 
 /* ===== HERO VISUAL CONTAINER ===== */
 .hero-visual{
@@ -261,18 +239,20 @@ html.dark .navbar{
     position:fixed;
     top:64px;
     left:-100%;
-    width:260px;
+    width:240px;
     height:100vh;
     background:rgba(15,23,42,.98);
     flex-direction:column;
     padding:30px;
     transition:.35s ease;
     box-shadow:var(--shadow);
-    z-index:1200;
+    z-index:998;
   }
+
   .nav-links.show{
     left:0;
   }
+}
 
   .nav-toggle{
     display:block;
@@ -321,20 +301,37 @@ section,
 h2[id] {
   scroll-margin-top: 100px;
 }
-.toggle{
-  position:relative;
-  z-index:2000;
-}
-@media(max-width:900px){
-  .toggle{
-    display:flex !important;
-  }
-}
+
 .nav-right{
   margin-left:auto;
   display:flex;
   align-items:center;
   gap:14px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Theme toggle button */
+.toggle {
+  background: var(--card);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: var(--shadow);
+  user-select: none;
+}
+
+/* Mobile spacing */
+@media (max-width: 900px) {
+  .toggle {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
 }
 </style>
 </head>
@@ -362,8 +359,15 @@ h2[id] {
   </div>
 
   <!-- RIGHT: THEME TOGGLE -->
-  <div class="nav-right">
-    <div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+  <div class="nav-left">
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</div>
+
+<div class="nav-right">
+  <div class="toggle" onclick="toggleTheme()" title="Toggle theme">
+    🌙 / ☀️
+  </div>
+</div>
   </div>
 
 </nav>
@@ -653,6 +657,10 @@ Albstadt-Sigmaringen University, Germany (Sept 2025 – Feb 2026)
 </div>
 
 <script>
+// Force page to always load at top (Hero section)
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
 function toggleTheme(){
   const root = document.documentElement;
   const isDark = root.classList.toggle("dark");
@@ -683,6 +691,13 @@ window.addEventListener('mousemove', (e)=>{
   const x = (e.clientX / window.innerWidth - 0.5) * 8;
   const y = (e.clientY / window.innerHeight - 0.5) * 8;
   heroImg.style.transform = `translate(${x}px, ${y}px)`;
+});
+/* Always load page from top (fix anchor reload issue) */
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+    window.scrollTo(0, 0);
+  }
 });
 </script>
 
