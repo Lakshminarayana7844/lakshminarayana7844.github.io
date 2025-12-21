@@ -58,6 +58,10 @@ body::before{
   align-items:center;
   justify-content:center;
 }
+.toggle{
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.15);
+}
 .nav-right{
   margin-left:auto;
   display:flex;
@@ -301,6 +305,21 @@ section,
 h2[id] {
   scroll-margin-top: 100px;
 }
+.toggle{
+  position:relative;
+  z-index:2000;
+}
+@media(max-width:900px){
+  .toggle{
+    display:flex !important;
+  }
+}
+.nav-right{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 </style>
 </head>
 
@@ -321,14 +340,11 @@ h2[id] {
   </div>
 
   <div class="nav-right">
-    
-    <div class="nav-toggle" onclick="toggleNav()">☰</div>
-  </div>
+  <div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+</div>
 
 </nav>
-
-<div class="container">
-
 
 <div class="container">
 
