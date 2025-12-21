@@ -254,30 +254,54 @@ html.dark .navbar{
     display:block;
   }
 }
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* ===== RESPONSIVE NAME SIZE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
-
 <nav class="navbar">
-  <div class="nav-logo">Lakshmi</div>
 
   <div class="nav-links" id="navLinks">
     <a href="#profile">Profile</a>
-    <a href="#interests">Interests</a>
-    <a href="#soft-skills">Soft Skills</a>
-    <a href="#languages">Languages</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Technical Skills</a>
     <a href="#certifications">Certifications</a>
     <a href="#journey">Journey</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#interests">Technical Interests</a>
+    <a href="#soft-skills">Soft Skills</a>
+    <a href="#languages">Languages</a>
   </div>
 
-  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+  <div class="nav-right">
+    
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+  </div>
+
 </nav>
 
 <div class="container">
