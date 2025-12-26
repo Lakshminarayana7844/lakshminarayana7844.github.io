@@ -720,7 +720,21 @@ window.addEventListener("load", () => {
     window.scrollTo(0, 0);
   }
 });
+<script>
+/* Close mobile menu when clicking outside */
+document.addEventListener('click', (e) => {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.nav-toggle');
 
+  if (
+    navLinks.classList.contains('show') &&
+    !navLinks.contains(e.target) &&
+    !hamburger.contains(e.target)
+  ) {
+    navLinks.classList.remove('show');
+  }
+});
+</script>
 </script>
 
 </body>
