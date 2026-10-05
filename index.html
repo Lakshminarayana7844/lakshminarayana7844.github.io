@@ -174,7 +174,43 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="grid">
 
     <div class="card featured">
-      <h3>SAP Sales Insights App <span class="new">New</span></h3>
+      <h3>UI5 BW Explorer <span class="new">New</span></h3>
+      <div class="meta">SAPUI5 · OpenUI5 · JavaScript</div>
+      <ul>
+        <li>SAPUI5 app with filter bar, paged table and summary KPIs over BW/4HANA style sales data.</li>
+        <li>Reads an OData-style API and falls back to built-in sample data, so it runs offline.</li>
+        <li>Query logic kept UI-independent and covered by 12 unit tests; Docker image and GitHub Actions CI.</li>
+      </ul>
+      <div class="tags"><span>SAPUI5</span><span>OData</span><span>JavaScript</span><span>Docker</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/ui5-bw-explorer" target="_blank" rel="noopener">View on GitHub &rarr;</a> &nbsp; <a href="https://lakshminarayana7844.github.io/ui5-bw-explorer/webapp/index.html" target="_blank" rel="noopener">Live demo &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>BW Query Assistant <span class="new">New</span></h3>
+      <div class="meta">Python · FastAPI · pandas</div>
+      <ul>
+        <li>OData-style REST API over BW/4HANA style InfoProvider data: $filter, $select, $orderby, $top, $skip, $count.</li>
+        <li>Offline natural-language endpoint turns questions like "top 3 materials by quantity in EMEA" into a query plan.</li>
+        <li>15 tests, Docker image and CI that smoke-tests the running container.</li>
+      </ul>
+      <div class="tags"><span>FastAPI</span><span>OData</span><span>pandas</span><span>Docker</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/bw-query-assistant" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>BW Data Quality and Lineage Checker <span class="new">New</span></h3>
+      <div class="meta">Python · pandas · YAML</div>
+      <ul>
+        <li>Config-driven data quality rules on BW-style extracts, with a report and a pass/fail exit code for CI.</li>
+        <li>Lineage graph shows which downstream objects are affected when a source fails.</li>
+        <li>23 tests, Docker image and GitHub Actions CI.</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>pandas</span><span>Data quality</span><span>Lineage</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/bw-data-quality-lineage" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>SAP Sales Insights App</h3>
       <div class="meta">SAP CAP · SAPUI5 · Python</div>
       <ul>
         <li>CAP (Node.js) service exposing OData v4: orders, KPIs, weekly revenue.</li>
@@ -187,7 +223,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
     </div>
 
     <div class="card featured">
-      <h3>SAP Sales Medallion Pipeline <span class="new">New</span></h3>
+      <h3>SAP Sales Medallion Pipeline</h3>
       <div class="meta">PySpark · Databricks-style medallion architecture</div>
       <ul>
         <li>Bronze, Silver and Gold layers turn an SAP-style sales extract into monthly revenue KPIs by region and material.</li>
