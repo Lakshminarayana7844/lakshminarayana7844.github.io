@@ -152,14 +152,14 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="timeline">
     <div class="job">
       <h3>Working Student</h3>
-      <div class="meta">Groz-Beckert KG · Sep 2026 - present</div>
+      <div class="meta">Groz-Beckert KG Â· Sep 2026 - present</div>
       <ul>
         <li>Continuing in the same team as my internship, working on SAP BW/4HANA and SAPUI5.</li>
       </ul>
     </div>
     <div class="job">
       <h3>SAP BW / SAPUI5 Intern</h3>
-      <div class="meta">Groz-Beckert KG · Mar - Aug 2026</div>
+      <div class="meta">Groz-Beckert KG Â· Mar - Aug 2026</div>
       <ul>
         <li>Supported the migration from SAP BW to SAP BW/4HANA: data models, BW queries, testing and debugging, and documentation.</li>
         <li>Worked on SAPUI5 apps: OData service integration and UI changes.</li>
@@ -174,8 +174,20 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="grid">
 
     <div class="card featured">
-      <h3>SAP Knowledge RAG <span class="new">New</span></h3>
-      <div class="meta">Python · BM25 · FastAPI</div>
+      <h3>SAP Order-to-Cash dbt <span class="new">New</span></h3>
+      <div class="meta">dbt Â· DuckDB Â· SQL</div>
+      <ul>
+        <li>Models SAP-style order-to-cash extracts (VBAK, VBAP, KNA1, MARA) into staging views and three analytics marts on DuckDB.</li>
+        <li>23 tests: uniqueness, referential integrity, accepted values, and a custom reconciliation from daily revenue back to item level.</li>
+        <li>Seeds included, dbt docs, Docker and CI; full build runs in about a second with no warehouse account.</li>
+      </ul>
+      <div class="tags"><span>dbt</span><span>DuckDB</span><span>SQL</span><span>Data Modeling</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/sap-order-to-cash-dbt" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>SAP Knowledge RAG</h3>
+      <div class="meta">Python Â· BM25 Â· FastAPI</div>
       <ul>
         <li>Retrieval augmented Q&amp;A over SAP BW/4HANA, SAPUI5, CAP and data engineering notes, with source and heading citations.</li>
         <li>Refuses off-topic questions; evaluated with recall@3 and MRR on labelled and held-out question sets.</li>
@@ -187,7 +199,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card featured">
       <h3>Sales Forecast Service <span class="new">New</span></h3>
-      <div class="meta">Python · scikit-learn · FastAPI</div>
+      <div class="meta">Python Â· scikit-learn Â· FastAPI</div>
       <ul>
         <li>Gradient boosting weekly revenue forecast with lag, rolling and calendar features, no data leakage.</li>
         <li>Backtest against baselines: 5.39% MAPE vs 6.66% naive and 9.31% seasonal naive (sample data).</li>
@@ -199,7 +211,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card featured">
       <h3>UI5 BW Explorer <span class="new">New</span></h3>
-      <div class="meta">SAPUI5 · OpenUI5 · JavaScript</div>
+      <div class="meta">SAPUI5 Â· OpenUI5 Â· JavaScript</div>
       <ul>
         <li>SAPUI5 app with filter bar, paged table and summary KPIs over BW/4HANA style sales data.</li>
         <li>Reads an OData-style API and falls back to built-in sample data, so it runs offline.</li>
@@ -211,7 +223,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card featured">
       <h3>BW Query Assistant</h3>
-      <div class="meta">Python · FastAPI · pandas</div>
+      <div class="meta">Python Â· FastAPI Â· pandas</div>
       <ul>
         <li>OData-style REST API over BW/4HANA style InfoProvider data: $filter, $select, $orderby, $top, $skip, $count.</li>
         <li>Offline natural-language endpoint turns questions like "top 3 materials by quantity in EMEA" into a query plan.</li>
@@ -223,7 +235,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card featured">
       <h3>BW Data Quality and Lineage Checker</h3>
-      <div class="meta">Python · pandas · YAML</div>
+      <div class="meta">Python Â· pandas Â· YAML</div>
       <ul>
         <li>Config-driven data quality rules on BW-style extracts, with a report and a pass/fail exit code for CI.</li>
         <li>Lineage graph shows which downstream objects are affected when a source fails.</li>
@@ -235,7 +247,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card featured">
       <h3>SAP Sales Insights App</h3>
-      <div class="meta">SAP CAP · SAPUI5 · Python</div>
+      <div class="meta">SAP CAP Â· SAPUI5 Â· Python</div>
       <ul>
         <li>CAP (Node.js) service exposing OData v4: orders, KPIs, weekly revenue.</li>
         <li>SAPUI5 dashboard with KPI tiles, revenue chart with 4-week forecast, filters and orders table.</li>
@@ -248,7 +260,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card featured">
       <h3>SAP Sales Medallion Pipeline</h3>
-      <div class="meta">PySpark · Databricks-style medallion architecture</div>
+      <div class="meta">PySpark Â· Databricks-style medallion architecture</div>
       <ul>
         <li>Bronze, Silver and Gold layers turn an SAP-style sales extract into monthly revenue KPIs by region and material.</li>
         <li>Data quality rules (deduplication, invalid values, missing regions) with a published quality report.</li>
@@ -260,7 +272,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card">
       <h3>Subjective Answer Analysis</h3>
-      <div class="meta">Python · Flask · NLP</div>
+      <div class="meta">Python Â· Flask Â· NLP</div>
       <ul>
         <li>Web app that scores student written answers out of 10 with feedback.</li>
         <li>Uses TF-IDF and cosine similarity against a reference answer.</li>
@@ -271,7 +283,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card">
       <h3>AdventureWorks Sales Analytics</h3>
-      <div class="meta">SQL · Power BI · DAX</div>
+      <div class="meta">SQL Â· Power BI Â· DAX</div>
       <ul>
         <li>Star-schema model on sales, product, customer, territory and returns tables (2020-2022).</li>
         <li>Dashboard for revenue, orders, customers and regional trends.</li>
@@ -293,7 +305,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 
     <div class="card">
       <h3>Zomato Restaurant Analytics</h3>
-      <div class="meta">Power BI · SQL</div>
+      <div class="meta">Power BI Â· SQL</div>
       <ul>
         <li>City performance, cuisine popularity, pricing and ratings across global restaurant data.</li>
         <li>Interactive slicers for city, cuisine, rating and price range.</li>
@@ -322,19 +334,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="grid">
     <div class="card">
       <h3>M.Sc. Industrial Artificial Intelligence</h3>
-      <div class="meta">Hochschule Albstadt-Sigmaringen, Germany · 2026 - present</div>
+      <div class="meta">Hochschule Albstadt-Sigmaringen, Germany Â· 2026 - present</div>
     </div>
     <div class="card">
       <h3>B.Tech. Artificial Intelligence and Data Science</h3>
-      <div class="meta">SIMATS University, India · 2022 - 2026 · CGPA 8.41 / 10</div>
+      <div class="meta">SIMATS University, India Â· 2022 - 2026 Â· CGPA 8.41 / 10</div>
       <p style="margin:8px 0 0;color:var(--muted)">Exchange semester in Digital Technology and Consulting at Albstadt-Sigmaringen University (Sep 2025 - Feb 2026).</p>
     </div>
   </div>
   <h3 style="margin:30px 0 14px">Certifications and publications</h3>
   <div class="grid">
-    <div class="card"><strong>Oracle Database SQL Certified Specialist</strong><div class="meta">Oracle University · July 2025</div></div>
-    <div class="card"><strong>Aviatrix Certified Engineer (ACE)</strong><div class="meta">Multicloud Network Associate · valid to March 2027</div></div>
-    <div class="card"><strong>Paper presentation: Uber Fare Deviation Prediction</strong><div class="meta">National Conference ASSET 2025 · March 2025</div></div>
+    <div class="card"><strong>Oracle Database SQL Certified Specialist</strong><div class="meta">Oracle University Â· July 2025</div></div>
+    <div class="card"><strong>Aviatrix Certified Engineer (ACE)</strong><div class="meta">Multicloud Network Associate Â· valid to March 2027</div></div>
+    <div class="card"><strong>Paper presentation: Uber Fare Deviation Prediction</strong><div class="meta">National Conference ASSET 2025 Â· March 2025</div></div>
   </div>
   <p style="margin-top:22px;color:var(--muted)">Languages: English, Telugu (native), German (beginner).</p>
 </section>
