@@ -174,7 +174,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="grid">
 
     <div class="card featured">
-      <h3>SAP Order-to-Cash dbt <span class="new">New</span></h3>
+      <h3>SAP OData Lakehouse <span class="new">New</span></h3>
+      <div class="meta">Python · FastAPI · pandas · Parquet</div>
+      <ul>
+        <li>Ingests SAP-style OData services into a bronze/silver lakehouse: nextLink pagination, incremental watermarks, Parquet upserts by key.</li>
+        <li>Contract validation per entity set (fields, types, business rules) fails the run before anything is written.</li>
+        <li>Mock FastAPI OData source, 6 tests including an in-process end-to-end run, Docker and CI.</li>
+      </ul>
+      <div class="tags"><span>OData</span><span>Data Engineering</span><span>Lakehouse</span><span>FastAPI</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/sap-odata-lakehouse" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>SAP Order-to-Cash dbt</h3>
       <div class="meta">dbt · DuckDB · SQL</div>
       <ul>
         <li>Models SAP-style order-to-cash extracts (VBAK, VBAP, KNA1, MARA) into staging views and three analytics marts on DuckDB.</li>
