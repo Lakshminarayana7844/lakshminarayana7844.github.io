@@ -174,7 +174,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="grid">
 
     <div class="card featured">
-      <h3>SAP OData Lakehouse <span class="new">New</span></h3>
+      <h3>SAP CDC Order Mirror <span class="new">New</span></h3>
+      <div class="meta">PySpark Structured Streaming · Delta Lake · Kafka</div>
+      <ul>
+        <li>Mirrors SAP SD sales orders from SLT/ODP-style CDC events (I/U/D) into a Delta table: newest (op_ts, op_seq) per key wins.</li>
+        <li>Soft deletes with tombstones, so a stale late insert cannot resurrect a deleted order; late and out-of-order events handled by design.</li>
+        <li>File or Kafka transport, 12 pure-Python tests for the canonical merge semantics, Docker demo and CI green.</li>
+      </ul>
+      <div class="tags"><span>CDC</span><span>PySpark</span><span>Delta Lake</span><span>Streaming</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/sap-cdc-order-mirror" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>SAP OData Lakehouse</h3>
       <div class="meta">Python · FastAPI · pandas · Parquet</div>
       <ul>
         <li>Ingests SAP-style OData services into a bronze/silver lakehouse: nextLink pagination, incremental watermarks, Parquet upserts by key.</li>
