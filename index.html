@@ -174,7 +174,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <div class="grid">
 
     <div class="card featured">
-      <h3>SAP CDC Order Mirror <span class="new">New</span></h3>
+      <h3>SAP BP Dedupe Matcher <span class="new">New</span></h3>
+      <div class="meta">Python · Record Linkage · MDM</div>
+      <ul>
+        <li>Finds duplicate SAP business partners the MDM way: blocking, weighted Fellegi-Sunter-style scoring, union-find clustering, golden-record merge.</li>
+        <li>Handles real master-data mess: umlauts, legal-form variants (GmbH vs Ges.m.b.H.), street abbreviations, phone formats, changed mailboxes.</li>
+        <li>Measured, not asserted: precision/recall against truth labels (1.0 / 1.0 on the sample), 19 tests, Docker and CI.</li>
+      </ul>
+      <div class="tags"><span>MDM</span><span>Data Quality</span><span>Record Linkage</span><span>SAP</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/sap-bp-dedupe-matcher" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>SAP CDC Order Mirror</h3>
       <div class="meta">PySpark Structured Streaming · Delta Lake · Kafka</div>
       <ul>
         <li>Mirrors SAP SD sales orders from SLT/ODP-style CDC events (I/U/D) into a Delta table: newest (op_ts, op_seq) per key wins.</li>
