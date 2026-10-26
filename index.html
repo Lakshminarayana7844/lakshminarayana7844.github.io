@@ -172,9 +172,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <h2>Projects</h2>
   <p class="sub">Newest first. All code is on GitHub.</p>
   <div class="grid">
+    <div class="card featured">
+      <h3>SAP Order Anomaly Detector <span class="new">New</span></h3>
+      <div class="meta">Python · IsolationForest · FastAPI</div>
+      <ul>
+        <li>Flags unusual SAP SD sales orders with an IsolationForest trained on 2,000 synthetic orders and scores new orders over a REST API.</li>
+        <li>Every flag comes with plain-language reason codes, like "order value is 24.7x this customer's median order", built from robust feature deviations.</li>
+        <li>Honest evaluation against labels (precision 0.67, recall 0.67), customer-relative value feature, 15 tests, Docker and CI green.</li>
+      </ul>
+      <div class="tags"><span>Machine Learning</span><span>FastAPI</span><span>SAP SD</span><span>Anomaly Detection</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/sap-order-anomaly-detector" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
 
     <div class="card featured">
-      <h3>SAP BP Dedupe Matcher <span class="new">New</span></h3>
+      <h3>SAP BP Dedupe Matcher</h3>
       <div class="meta">Python · Record Linkage · MDM</div>
       <ul>
         <li>Finds duplicate SAP business partners the MDM way: blocking, weighted Fellegi-Sunter-style scoring, union-find clustering, golden-record merge.</li>
