@@ -173,7 +173,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <p class="sub">Newest first. All code is on GitHub.</p>
   <div class="grid">
     <div class="card featured">
-      <h3>Order Anomaly Detector <span class="new">New</span></h3>
+      <h3>Invoice Three-Way Match <span class="new">New</span></h3>
+      <div class="meta">Python · FastAPI · Procurement Controls</div>
+      <ul>
+        <li>Automates the SAP MM invoice check: matches invoices against purchase orders and goods receipts with explicit tolerances, then auto-posts, holds for review, or blocks.</li>
+        <li>Catches price variances, over-receipt quantities, missing goods receipts and duplicate invoices, each with a reason code an accountant can act on.</li>
+        <li>Evaluated against labeled data (accuracy 0.991, BLOCK precision/recall 1.0), 17 tests, Docker and CI green.</li>
+      </ul>
+      <div class="tags"><span>Data Engineering</span><span>FastAPI</span><span>SAP MM</span><span>Controls</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/invoice-three-way-match" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>Order Anomaly Detector</h3>
       <div class="meta">Python · IsolationForest · FastAPI</div>
       <ul>
         <li>Flags unusual SAP SD sales orders with an IsolationForest trained on 2,000 synthetic orders and scores new orders over a REST API.</li>
