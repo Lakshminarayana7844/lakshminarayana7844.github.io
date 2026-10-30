@@ -173,7 +173,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <p class="sub">Newest first. All code is on GitHub.</p>
   <div class="grid">
     <div class="card featured">
-      <h3>Invoice Three-Way Match <span class="new">New</span></h3>
+      <h3>Predictive Maintenance RUL <span class="new">New</span></h3>
+      <div class="meta">Python · scikit-learn · FastAPI</div>
+      <ul>
+        <li>Predicts the remaining useful life of machines from vibration, temperature, pressure and rpm readings, and maps it to a risk band a maintenance team can act on.</li>
+        <li>Causal rolling features per machine with no future leakage, gradient boosting, evaluated on machines the model never saw (MAE 10.11 cycles).</li>
+        <li>FastAPI scoring service, seeded sensor data generator, 9 tests, Docker and CI green.</li>
+      </ul>
+      <div class="tags"><span>Industrial AI</span><span>Machine Learning</span><span>FastAPI</span><span>Predictive Maintenance</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/predictive-maintenance-rul" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>Invoice Three-Way Match</h3>
       <div class="meta">Python · FastAPI · Procurement Controls</div>
       <ul>
         <li>Automates the SAP MM invoice check: matches invoices against purchase orders and goods receipts with explicit tolerances, then auto-posts, holds for review, or blocks.</li>
