@@ -173,7 +173,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
   <p class="sub">Newest first. All code is on GitHub.</p>
   <div class="grid">
     <div class="card featured">
-      <h3>Predictive Maintenance RUL <span class="new">New</span></h3>
+      <h3>OData Lakehouse <span class="new">New</span></h3>
+      <div class="meta">Python · pyarrow · CLI + dbt</div>
+      <ul>
+        <li>Installable toolkit that syncs any OData v4 service (the API style SAP systems expose) into a local Parquet lakehouse.</li>
+        <li>Incremental watermarks with last-write-wins merges, schema contracts that report every violation, and dbt staging scaffolding with key tests.</li>
+        <li>CLI with sync, validate and scaffold-dbt commands, 18 tests against an in-process mock OData server, CI matrix on Python 3.10-3.12, Docker.</li>
+      </ul>
+      <div class="tags"><span>Data Engineering</span><span>OData</span><span>Parquet</span><span>dbt</span><span>CI</span></div>
+      <a href="https://github.com/Lakshminarayana7844/odata-lakehouse" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    <div class="card featured">
+      <h3>Predictive Maintenance RUL</h3>
       <div class="meta">Python · scikit-learn · FastAPI</div>
       <ul>
         <li>Predicts the remaining useful life of machines from vibration, temperature, pressure and rpm readings, and maps it to a risk band a maintenance team can act on.</li>
